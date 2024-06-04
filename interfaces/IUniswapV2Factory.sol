@@ -4,6 +4,7 @@ pragma solidity >=0.5.0;
 
 interface IUniswapV2Factory {
     event PairCreated(address indexed token0, address indexed token1, address pair, uint);
+    event FeeToSet(address _feeTo);
 
     function feeTo() external view returns (address);
     function feeToSetter() external view returns (address);
@@ -16,6 +17,4 @@ interface IUniswapV2Factory {
     function createPair(address tokenA, address tokenB) external returns (address pair);
 
     function setFeeTo(address) external;
-    function setFeeToSetter(address) external;
-    function setMigrator(address) external;
 }
